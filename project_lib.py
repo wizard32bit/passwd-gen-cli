@@ -1,17 +1,17 @@
 #import necessary modules
-import random, string
+import random, string, pyperclip, os
 #check the password length
 def length():
     while True:
-        passwd_len= input("input passwod length (minimum 8): ")
+        passwd_len= input("\nInput passwd length (minimum 8): ")
         if passwd_len.isdigit():
             passwd_len= int(passwd_len)
             if passwd_len<8:
-                print("the input length is lower than 8")
+                print("This input is lower than 8")
             else:
                 break
         else:
-            print("the input is not numeric")
+            print("This input is not numeric")
         
     return passwd_len
 
@@ -73,8 +73,17 @@ def generate(mode):
         print("\nCustom Mode:")
         print("You have chosen to generate your password in Custom Mode.")
         print("The input has to be in form of a tuple (e.g., (3,5,7,0)) called `Pattern`.")
-        print("the Pattern should be in the form of (lowercase, uppercase, digits, punctuation).")
+        print("!!! Put in consideration that the minimum length acceptable (in this case the sum of the numbers in the given pattern) must be 8 (or higher)")
+        print("The Pattern should be in this order (lowercase, uppercase, digits, special chars).")
         print("Unwanted characters: in case you don't want a particular type of characters, make sure to put 0 in the pattern.")
+        print("  e.g., In order to generate a password that contains lowercase and digits.")
+        print("  1) the pattern must contain no uppercase nor special chars")
+        print("  2) 1-9: number of lowercases")
+        print("  3) 0  : no uppercases")
+        print("  4) 1-9: number of digits")
+        print("  5) 0: no special chars")
+        print("Example of patterns: (3, 0, 5, 0) | (1, 0, 7, 0) | (4, 0, 9, 0) | (6, 0, 6, 0)")
+
         print("The order matters, make sure to follow it to get the best results.\n")
         print("===============================================================================================================\n")
 
