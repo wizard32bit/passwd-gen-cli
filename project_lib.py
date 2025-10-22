@@ -1,5 +1,5 @@
 #import necessary modules
-import random, string, pyperclip, os
+import random, string, pyperclip
 #check the password length
 def length():
     while True:
